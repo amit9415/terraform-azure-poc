@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "fun-grp" {
   name     = "fun-grp-nov6-v1"
-  location = "Australia Central"
+  location = "Canada Central"
 }
 
 resource "azurerm_storage_account" "fun-str-acc" {
