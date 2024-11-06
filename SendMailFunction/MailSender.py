@@ -2,7 +2,7 @@ import logging
 import azure.functions as func 
 import requests 
 from msal import ConfidentialClientApplication 
-
+import os
   
 
 def main(req: func.HttpRequest) -> func.HttpResponse: 
@@ -11,11 +11,13 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
   
 
-    client_id = "your-client-id" 
+    client_id = os.getenv("CLIENT_ID")
 
-    client_secret = "your-client-secret" 
+    client_secret = os.getenv("CLIENT_SECRET")
 
-    tenant_id = "your-tenant-id" 
+    tenant_id = os.getenv("TENNAT_ID")
+
+    print('client_id',client_id)
 
     authority = f"https://login.microsoftonline.com/{tenant_id}" 
 
