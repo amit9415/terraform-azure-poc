@@ -17,10 +17,15 @@ resource "azuread_application_password" "secret" {
    application_id    = azuread_application.app.id
 }
 
-resource "azuread_application_app_role_assignment" "email_sender_permission" { 
-  principal_object_id = azuread_service_principal.email_sender_sp.object_id 
-  app_role_id         = "c7e6d6e1-4a3b-4e9a-b7a3-4e7fdf4c1f6c" # Mail.Send permission ID 
-  resource_id         = "00000003-0000-0000-c000-000000000000" # Microsoft Graph 
+resource "random_uuid" "email_sender_administrator" {}
+
+resource "azuread_application_app_role" "email_sender_permission" { 
+  role_id        = random_uuid.email_sender_administrator.id
+  application_id = azuread_application.app.id
+  allowed_member_types = ["User"]
+  description          = "Admins can manage roles and perform all task actions"
+  display_name         = "Administer"
+  value                = "admin"
 } 
 
 output "client_id" {
