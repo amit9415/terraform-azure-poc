@@ -4,3 +4,7 @@ variable "client_id" {
 variable "client_secret" {
     description = "client Secret"
 }
+
+variable "tenant_id" {
+    description = "tennat id"
+}

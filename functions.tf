@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "fun-grp" {
-  name     = "fun-grp-nov6-v1"
+  name     = "fun-grp-nov6-v2"
   location = "Canada Central"
 }
 
 resource "azurerm_storage_account" "fun-str-acc" {
-  name                     = "funstraccpoc123123123"
+  name                     = "funstracc123"
   resource_group_name      = azurerm_resource_group.fun-grp.name
   location                 = azurerm_resource_group.fun-grp.location
   account_tier             = "Standard"
