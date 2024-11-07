@@ -8,7 +8,7 @@ import requests;
 dict_ = {'client_id': 'appId', 'secret': 'secret', 'tenant_id': 'tenantId'}
 
 def acquire_token():
-    print('1231313')
+    print('Inside acquire_token')
     authority_url = f'https://login.microsoftonline.com/{dict_["tenant_id"]}'
     app = msal.ConfidentialClientApplication(
         authority=authority_url,

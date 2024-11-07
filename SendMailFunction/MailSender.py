@@ -9,15 +9,17 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     logging.info('Python HTTP trigger function processed a request.') 
 
-  
-
     client_id = os.getenv("CLIENT_ID")
+
+    print('client_id',client_id)
 
     client_secret = os.getenv("CLIENT_SECRET")
 
+    print('client_id',client_secret)
+
     tenant_id = os.getenv("TENNAT_ID")
 
-    print('client_id',client_id)
+    print('client_id',tenant_id)
 
     authority = f"https://login.microsoftonline.com/{tenant_id}" 
 
